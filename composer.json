@@ -1,0 +1,17 @@
+{
+    "name": "tje3d/telegram",
+    "authors": [{
+        "name": "Moein",
+        "email": "tje3d@yahoo.com"
+    }],
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tje3d\\Telegram\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
