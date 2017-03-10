@@ -1,4 +1,4 @@
-# Telegram
+# Telegram Bot API
 PHP Telegram Bot API. Supports Laravel out of the box.
 # Installation
 `composer require tje3d/telegram`
