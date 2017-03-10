@@ -1,5 +1,3 @@
-# This project is under active development, and isn't usable yet.
-
 # Telegram
 PHP Telegram Bot API. Supports Laravel out of the box.
 # Installation
@@ -24,9 +22,7 @@ Soon...
 # Contributing
 Contributions are welcome and will be fully credited.
 # TODO
-* ⬜️ Update Readme
-* ⬜️ Documentation
-* ⬜️ Create Pages
+* ⬜️ Documentation ( would be cool if someone do that :) )
 
 # Contact me
 You can contact me via [Telegram](https://telegram.me/tje3d) or [Email](mailto:tje3d@yahoo.com).
