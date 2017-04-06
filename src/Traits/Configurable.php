@@ -4,28 +4,29 @@ namespace Tje3d\Telegram\Traits;
 
 trait Configurable
 {
-	public $config;
+	protected $config = [];
 
-	public function config($input, $default = '')
+	public function setConfig($key, $value = '')
 	{
-		if (is_array($input)) {
-			foreach ($input as $key => $val) {
-				$this->config[$key] = $val;
+		if (is_array($key)) {
+			foreach ($key as $loop_key => $loop_value) {
+				$this->setConfig($loop_key, $loop_value);
 			}
+
 			return $this;
 		}
 
-		return isset($this->config[$input]) ? $this->config[$input] : $default;
+		$this->config[$key] = $value;
+		return $this;
 	}
 
-	public function configs(...$keys)
+	public function hasConfig($key)
 	{
-		$Output = [];
+		return isset($this->config[$key]);
+	}
 
-		foreach ($keys as $key) {
-			$Output[$key] = $this->config($key);
-		}
-
-		return $Output;
+	public function getConfig($key, $default = '')
+	{
+		return $this->hasConfig($key) ? $this->config[$key] : $default;
 	}
 }
