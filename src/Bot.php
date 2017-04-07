@@ -23,26 +23,44 @@ class Bot implements BaseBot
     	$this->request = new Request($this);
     }
 
+    /**
+     * Set bot token
+     * @param  string $token
+     */
     public function token($token)
     {
         return $this->setConfig('token', $token);
     }
 
-    public function getMe()
-    {
-    	return $this->sendMethod(new GetMe());
-    }
-
+    /**
+     * Get new binded request
+     */
     public function request()
     {
     	return new Request($this);
     }
 
+    /**
+     * Get information about bot
+     */
+    public function getMe()
+    {
+    	return $this->sendMethod(new GetMe());
+    }
+
+    /**
+     * Is bot (token) still valid
+     * @return boolean
+     */
     public function isValid()
     {
     	return isset($this->getMe()->ok);
     }
 
+    /**
+     * Send a method via this bot
+     * @param  MessageMethod $message
+     */
     public function sendMethod(MessageMethod $message)
     {
     	return $this->request->sendMethod($message);

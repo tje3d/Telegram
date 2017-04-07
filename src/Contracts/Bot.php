@@ -8,8 +8,8 @@ interface Bot
 {
 	public function __construct($token = null);
 	public function token($token);
-	public function getMe();
 	public function request();
+	public function getMe();
 	public function isValid();
 	public function sendMethod(MessageMethod $message);
 }
