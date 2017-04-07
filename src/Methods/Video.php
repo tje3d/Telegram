@@ -20,6 +20,16 @@ class Video extends MessageMethod
 	}
 
 	/**
+	 * Video to send. Pass a file_id as String to send a video that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a video from the Internet, or upload a new video using multipart/form-data. More info on Sending Files »
+	 * 
+	 * @param  string $path
+	 */
+	public function video($path)
+	{
+		return $this->file($path, __FUNCTION__);
+	}
+
+	/**
 	 * Duration of the audio in seconds
 	 * 
 	 * @param  integer $seconds

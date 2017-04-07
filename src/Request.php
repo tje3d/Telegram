@@ -109,10 +109,11 @@ class Request implements BaseRequest
         }
 
         $bodyType = $this->getConfig('hasFile') ? 'multipart' : 'json';
+        $body     = $this->getConfig('body', '') ?: [];
 
         try {
             $response = (string) $this->handler->request('POST', $this->apiUrl(), [
-                    $bodyType => $this->getConfig('body', '') ?: [],
+                    $bodyType => $body,
                 ])
                 ->getBody();
         } catch (ClientException $e) {

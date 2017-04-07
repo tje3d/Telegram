@@ -18,4 +18,14 @@ class Photo extends MessageMethod
 	{
 		return 'sendPhoto';
 	}
+
+	/**
+	 * Photo to send. Pass a file_id as String to send a photo that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart/form-data. More info on Sending Files »
+	 * 
+	 * @param  string $path
+	 */
+	public function photo($path)
+	{
+		return $this->file($path, __FUNCTION__);
+	}
 }
