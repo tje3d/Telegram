@@ -20,7 +20,7 @@ class Forward extends MessageMethod
 	/**
 	 * Unique identifier for the chat where the original message was sent (or channel username in the format @channelusername)
 	 * 
-	 * @param  [Integer|String] $value
+	 * @param  Integer|String $value
 	 */
 	public function from_chat_id($value)
 	{
@@ -30,7 +30,7 @@ class Forward extends MessageMethod
 	/**
 	 * Message identifier in the chat specified in from_chat_id
 	 * 
-	 * @param  [integer] $id
+	 * @param  integer $id
 	 */
 	public function message_id($id)
 	{
