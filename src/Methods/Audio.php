@@ -6,7 +6,7 @@ use Tje3d\Telegram\Traits\FileMethod;
 use Tje3d\Telegram\Traits\RepliableMethod;
 use Tje3d\Telegram\Traits\SilentMethod;
 
-class Audio extends MethodMethod
+class Audio extends MessageMethod
 {
 	use SilentMethod, RepliableMethod, FileMethod;
 

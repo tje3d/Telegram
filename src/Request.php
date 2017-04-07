@@ -3,7 +3,7 @@
 namespace Tje3d\Telegram;
 
 use Tje3d\Telegram\Contracts\Bot;
-use Tje3d\Telegram\Contracts\MessageMethod;
+use Tje3d\Telegram\Contracts\Method;
 use Tje3d\Telegram\Contracts\Request as BaseRequest;
 use Tje3d\Telegram\Traits\Configurable;
 
@@ -30,7 +30,7 @@ class Request implements BaseRequest
      */
     public function apiUrl()
     {
-    	$url = $this->url . $this->bot->getConfig('token') . '/' . $this->getConfig('api');
+        $url = $this->url . $this->bot->getConfig('token') . '/' . $this->getConfig('api');
 
         if ($this->getConfig('chat_id')) {
             $url = $url . '?chat_id=' . $this->getConfig('chat_id');
@@ -86,13 +86,13 @@ class Request implements BaseRequest
 
     /**
      * Send a method
-     * @param  MessageMethod $message
+     * @param  Method $message
      */
-    public function sendMethod(MessageMethod $message)
+    public function sendMethod(Method $message)
     {
-    	return $this->body($message->toArray())
-    		->api($message->api())
-    		->send();
+        return $this->body($message->toArray())
+            ->api($message->api())
+            ->send();
     }
 
     /**
@@ -108,18 +108,44 @@ class Request implements BaseRequest
             throw new \Exception('Please set a api name');
         }
 
-        $bodyType = $this->getConfig('hasFile') ? 'multipart' : 'json';
         $body     = $this->getConfig('body', '') ?: [];
+        $bodyType = isset($body['hasFile']) ? 'multipart' : 'json';
+
+        if ($bodyType == 'multipart') {
+            $body = $this->convertDataToMultipart($body);
+        }
 
         try {
             $response = (string) $this->handler->request('POST', $this->apiUrl(), [
-                    $bodyType => $body,
-                ])
-                ->getBody();
+                $bodyType => $body,
+            ])->getBody();
         } catch (ClientException $e) {
             $response = (string) $e->getResponse()->getBody();
         }
 
         return json_decode($response);
+    }
+
+    public function convertDataToMultipart($data)
+    {
+        $output = [];
+
+        foreach ($data as $key => $val) {
+        	if (in_array($key, ['hasFile'])) {
+        		continue;
+        	}
+
+        	if ($key == "file") {
+        		$output[] = $val;
+        		continue;
+        	}
+
+        	$output[] = [
+	                'name'     => $key,
+	                'contents' => $val,
+	            ];
+        }
+
+        return $output;
     }
 }

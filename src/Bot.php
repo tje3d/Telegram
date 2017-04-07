@@ -3,7 +3,7 @@
 namespace Tje3d\Telegram;
 
 use Tje3d\Telegram\Contracts\Bot as BaseBot;
-use Tje3d\Telegram\Contracts\MessageMethod;
+use Tje3d\Telegram\Contracts\Method;
 use Tje3d\Telegram\Methods\GetMe;
 use Tje3d\Telegram\Request;
 use Tje3d\Telegram\Traits\BotUpdates;
@@ -60,9 +60,9 @@ class Bot implements BaseBot
 
     /**
      * Send a method via this bot
-     * @param  MessageMethod $message
+     * @param  Method $message
      */
-    public function sendMethod(MessageMethod $message)
+    public function sendMethod(Method $message)
     {
     	return $this->request->sendMethod($message);
     }

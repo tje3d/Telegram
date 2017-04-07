@@ -11,11 +11,11 @@ trait FileMethod
      */
     public function file($path, $name = 'file')
     {
-        return $this->setConfig($name, [
-                'Content-type' => 'multipart/form-data',
-                'name'         => pathinfo($path, PATHINFO_BASENAME),
-                'contents'     => file_get_contents($path),
-            ])
+        return $this->setConfig('file', [
+            'name'     => $name,
+            'contents' => fopen($path, 'r'),
+            'filename' => pathinfo($path, PATHINFO_BASENAME),
+        ])
             ->setConfig('hasFile', true);
     }
 

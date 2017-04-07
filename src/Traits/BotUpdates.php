@@ -48,7 +48,7 @@ trait BotUpdates
             $body['certificate'] = [
                 'Content-type' => 'multipart/form-data',
                 'name'         => pathinfo($certificate, PATHINFO_BASENAME),
-                'contents'     => file_get_contents($certificate),
+                'contents'     => $certificate,
             ];
             $request->hasFile();
         }

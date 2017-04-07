@@ -2,7 +2,7 @@
 
 namespace Tje3d\Telegram\Contracts;
 
-use Tje3d\Telegram\Contracts\MessageMethod;
+use Tje3d\Telegram\Contracts\Method;
 
 interface Bot
 {
@@ -11,5 +11,5 @@ interface Bot
 	public function request();
 	public function getMe();
 	public function isValid();
-	public function sendMethod(MessageMethod $message);
+	public function sendMethod(Method $message);
 }
