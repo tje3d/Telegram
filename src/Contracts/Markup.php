@@ -4,5 +4,7 @@ namespace Tje3d\Telegram\Contracts;
 
 interface Markup
 {
-	function toJson();
+	function toArray();
+	function row();
+	function addButton($config);
 }

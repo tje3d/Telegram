@@ -10,5 +10,6 @@ interface Request
 	public function __construct(Bot $bot = null);
 	public function api($name);
 	public function bot(Bot $bot);
-	public function send(Message $message);
+	public function sendMessage(Message $message);
+	public function send();
 }
