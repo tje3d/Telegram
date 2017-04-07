@@ -30,6 +30,11 @@ $bot->sendMethod(
 );
 ```
 
+### Keyboard
+```
+@todo
+```
+
 ### Photo, Audio, Video, Document ...
 ```
 $bot->sendMethod(
@@ -44,6 +49,9 @@ $bot->sendMethod(
 	(new \Tje3d\Telegram\Methods\Video)
 		->chat_id($chatId)
 		->video(realpath('video.mp4'))
+		->duration(10) // optional
+		->width(320) // optional
+		->height(320) // optional
 );
 
 ...
@@ -52,6 +60,9 @@ $bot->sendMethod(
 	(new \Tje3d\Telegram\Methods\Audio)
 		->chat_id($chatId)
 		->audio(realpath('video.mp3'))
+		->duration(30) // optional
+		->performer('tje3d') // optional
+		->title('Great music') // optional
 );
 ...
 ```
