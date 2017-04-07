@@ -9,19 +9,19 @@ $bot = new \Tje3d\Telegram\Bot($token);
 $info = $bot->getMe();
 print_r($info);
 ```
-### Set Web Hook
+### ✔️ Set Web Hook
 ```
 $bot->setWebhook('https://sld.tld');
 ```
 
-### Get Updates
+### ✔️ Get Updates
 ```
 $response = $bot->getUpdates();
 ...
 $response = $bot->getUpdates($offset=0, $limit=100, $timeout=10); // Long pull
 ```
 
-### Send text message (known as sendMessage)
+### ✔️ Send text message (known as sendMessage)
 ```
 $bot->sendMethod(
 	(new \Tje3d\Telegram\Methods\Text())
@@ -29,7 +29,7 @@ $bot->sendMethod(
 	    ->chat_id($chatId)
 );
 ```
-Or pass configuration as array
+#### ⭐️ Or pass configuration as array
 
 ```
 $bot->sendMethod(
@@ -37,12 +37,54 @@ $bot->sendMethod(
 );
 ```
 
-### Keyboard
+### ✔️ Keyboard
+#### ⭐️ Reply Keyboard
 ```
-@todo
+$bot->sendMethod(
+	(new Tje3d\Telegram\Methods\Text)
+		->text('My Sample Text')
+		->chat_id($chatId)
+		->reply_markup(
+			(new Tje3d\Telegram\Markups\ReplayKeyboardMarkup)
+    			->row(function($handler){
+    				$handler->addButton(['text' => 'btn1']);
+    				$handler->addButton(['text' => 'my special button ⭐️']);
+    			})
+    			->row(function($handler){
+    				$handler->addButton(['text' => 'WOW']);
+    			})
+    			->row(function($handler){
+    				$handler->addButton(['text' => 'Hey this is third line!']);
+    			})
+    			->row(function($handler){
+    				$handler->addButton(['text' => '1']);
+    				$handler->addButton(['text' => '2']);
+    				$handler->addButton(['text' => '3']);
+    				$handler->addButton(['text' => '4']);
+    			})
+		)
+);
+```
+#### ⭐️ Inline Keyboard
+```
+$bot->sendMethod(
+	(new Tje3d\Telegram\Methods\Text)
+		->text('My Sample Text')
+		->chat_id($testChatId)
+		->reply_markup(
+			(new Tje3d\Telegram\Markups\InlineKeyboardMarkup)
+    			->row(function($handler){
+    				$handler->addButton(['text' => 'btn1', 'url' => 'http://sld.tld']);
+    				$handler->addButton(['text' => 'my special button ⭐️', 'url' => 'http://sld.tld']);
+    			})
+    			->row(function($handler){
+    				$handler->addButton(['text' => 'WOW', 'callback_data' => 'doSomethingSpecial']);
+    			})
+		)
+);
 ```
 
-### Photo, Audio, Video, Document ...
+### ✔️ Photo, Audio, Video, Document ...
 ```
 $bot->sendMethod(
 	(new \Tje3d\Telegram\Methods\Photo)
@@ -74,7 +116,7 @@ $bot->sendMethod(
 ...
 ```
 
-### ChatAction
+### ✔️ ChatAction
 ```
 $bot->sendMethod(
 	(new \Tje3d\Telegram\Methods\ChatAction)
