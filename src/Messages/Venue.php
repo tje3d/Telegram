@@ -11,6 +11,15 @@ class Venue extends Message
 	use SilentMessage, RepliableMessage;
 
 	/**
+	 * Api name
+	 * @return string
+	 */
+	public function api()
+	{
+		return 'sendVenue';
+	}
+
+	/**
 	 * Latitude of location
 	 * 
 	 * @param  float $latitude

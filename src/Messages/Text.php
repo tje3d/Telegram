@@ -10,6 +10,15 @@ class Text extends Message
 	use SilentMessage, RepliableMessage;
 
 	/**
+	 * Api name
+	 * @return string
+	 */
+	public function api()
+	{
+		return 'sendMessage';
+	}
+
+	/**
 	 * Text of the message to be sent
 	 * 
 	 * @param  string $text

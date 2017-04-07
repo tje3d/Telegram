@@ -9,4 +9,13 @@ use Tje3d\Telegram\Traits\SilentMessage;
 class Photo extends Message
 {
 	use SilentMessage, RepliableMessage, FileMessage;
+
+	/**
+	 * Api name
+	 * @return string
+	 */
+	public function api()
+	{
+		return 'sendDocument';
+	}
 }

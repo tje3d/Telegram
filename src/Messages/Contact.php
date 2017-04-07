@@ -11,6 +11,15 @@ class Contact extends Message
 	use SilentMessage, RepliableMessage;
 
 	/**
+	 * Api name
+	 * @return string
+	 */
+	public function api()
+	{
+		return 'sendContact';
+	}
+
+	/**
 	 * Contact's phone number
 	 * 
 	 * @param  string $number

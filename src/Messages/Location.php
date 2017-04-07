@@ -11,6 +11,15 @@ class Location extends Message
 	use SilentMessage, RepliableMessage;
 
 	/**
+	 * Api name
+	 * @return string
+	 */
+	public function api()
+	{
+		return 'sendLocation';
+	}
+
+	/**
 	 * Latitude of location
 	 * 
 	 * @param  float $latitude

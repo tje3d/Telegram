@@ -20,10 +20,10 @@ abstract class Message implements BaseMessage
 	}
 
 	/**
-	 * Convert message to JSON
-	 * @return [object]
+	 * Convert message to array
+	 * @return array
 	 */
-	public function toJson()
+	public function toArray()
 	{
 		$output = [];
 
@@ -31,6 +31,6 @@ abstract class Message implements BaseMessage
 			$output[$key] = $val;
 		}
 
-		return json_encode($output);
+		return $output;
 	}
 }

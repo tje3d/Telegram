@@ -11,6 +11,15 @@ class Video extends Message
 	use SilentMessage, RepliableMessage, FileMessage;
 
 	/**
+	 * Api name
+	 * @return string
+	 */
+	public function api()
+	{
+		return 'sendVideo';
+	}
+
+	/**
 	 * Duration of the audio in seconds
 	 * 
 	 * @param  integer $seconds

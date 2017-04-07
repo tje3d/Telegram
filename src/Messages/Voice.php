@@ -11,6 +11,15 @@ class Voice extends Message
 	use SilentMessage, RepliableMessage, FileMessage;
 
 	/**
+	 * Api name
+	 * @return string
+	 */
+	public function api()
+	{
+		return 'sendVoice';
+	}
+
+	/**
 	 * Duration of the audio in seconds
 	 * 
 	 * @param  integer $seconds
