@@ -1,14 +1,12 @@
 <?php
 
-namespace Tje3d\Telegram\Messages;
+namespace Tje3d\Telegram\Methods;
 
 use Tje3d\Telegram\Contracts\MessageMethod as BaseMessageMethod;
 use Tje3d\Telegram\Traits\Configurable;
 
-abstract class MessageMethod implements BaseMessageMethod
+abstract class MessageMethod extends BaseMethod implements BaseMessageMethod
 {
-	use Configurable;
-
 	/**
 	 * Unique identifier for the target chat or username of the target channel (in the format @channelusername)
 	 * 
@@ -17,20 +15,5 @@ abstract class MessageMethod implements BaseMessageMethod
 	public function chat_id($id)
 	{
 		return $this->setConfig('chat_id', $id);
-	}
-
-	/**
-	 * Convert message to array
-	 * @return array
-	 */
-	public function toArray()
-	{
-		$output = [];
-
-		foreach ($this->config as $key => $val) {
-			$output[$key] = $val;
-		}
-
-		return $output;
 	}
 }

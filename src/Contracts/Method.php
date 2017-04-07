@@ -2,7 +2,7 @@
 
 namespace Tje3d\Telegram\Contracts;
 
-interface MessageMethod
+interface Method
 {
-	function chat_id($id);
+	function toArray();
 }

@@ -2,7 +2,7 @@
 
 namespace Tje3d\Telegram\Methods;
 
-class GetMe extends MessageMethod
+class GetMe extends BaseMethod
 {
 	/**
 	 * Api name
