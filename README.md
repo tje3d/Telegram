@@ -3,7 +3,7 @@ PHP Telegram Bot API
 # Installation
 `composer require tje3d/telegram`
 # Examples
-### Initialize a Bot
+### ✔️ Initialize a Bot
 ```
 $bot = new \Tje3d\Telegram\Bot($token);
 $info = $bot->getMe();
