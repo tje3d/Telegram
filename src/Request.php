@@ -28,7 +28,7 @@ class Request implements BaseRequest
      * Return api url + token + chat_id
      * @return string
      */
-    private function apiUrl()
+    public function apiUrl()
     {
     	$url = $this->url . $this->bot->getConfig('token') . '/' . $this->getConfig('api');
 

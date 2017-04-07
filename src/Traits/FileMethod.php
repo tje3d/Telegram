@@ -11,7 +11,9 @@ trait FileMethod
 	 */
 	public function file($path)
 	{
-		return $this->setConfig(strtolower(__CLASS__), file_get_contents($path));
+		return $this
+			->setConfig(strtolower(__CLASS__), file_get_contents($path))
+			->setConfig('hasFile', true);
 	}
 
 	/**

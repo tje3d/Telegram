@@ -6,11 +6,12 @@ use Tje3d\Telegram\Contracts\Bot as BaseBot;
 use Tje3d\Telegram\Contracts\MessageMethod;
 use Tje3d\Telegram\Methods\GetMe;
 use Tje3d\Telegram\Request;
+use Tje3d\Telegram\Traits\BotUpdates;
 use Tje3d\Telegram\Traits\Configurable;
 
 class Bot implements BaseBot
 {
-    use Configurable;
+    use Configurable, BotUpdates;
 
     protected $request;
 
