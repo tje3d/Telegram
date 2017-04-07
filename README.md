@@ -65,6 +65,7 @@ $bot->sendMethod(
 		)
 );
 ```
+![](https://cloud.githubusercontent.com/assets/5238989/24823179/1c9cb8d2-1c11-11e7-96b1-212be128454f.png =150x)
 #### ⭐️ Inline Keyboard
 ```
 $bot->sendMethod(
@@ -83,6 +84,7 @@ $bot->sendMethod(
 		)
 );
 ```
+![](https://cloud.githubusercontent.com/assets/5238989/24823178/1c9aa09c-1c11-11e7-9ec0-85ad42c41440.png =150x)
 
 ### ✔️ Photo, Audio, Video, Document ...
 ```
