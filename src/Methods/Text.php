@@ -1,13 +1,13 @@
 <?php
 
-namespace Tje3d\Telegram\Messages;
+namespace Tje3d\Telegram\Methods;
 
-use Tje3d\Telegram\Traits\SilentMessage;
-use Tje3d\Telegram\Traits\RepliableMessage;
+use Tje3d\Telegram\Traits\SilentMethod;
+use Tje3d\Telegram\Traits\RepliableMethod;
 
-class Text extends Message
+class Text extends MessageMethod
 {
-	use SilentMessage, RepliableMessage;
+	use SilentMethod, RepliableMethod;
 
 	/**
 	 * Api name

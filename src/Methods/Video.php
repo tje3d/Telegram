@@ -1,14 +1,14 @@
 <?php
 
-namespace Tje3d\Telegram\Messages;
+namespace Tje3d\Telegram\Methods;
 
-use Tje3d\Telegram\Traits\FileMessage;
-use Tje3d\Telegram\Traits\RepliableMessage;
-use Tje3d\Telegram\Traits\SilentMessage;
+use Tje3d\Telegram\Traits\FileMethod;
+use Tje3d\Telegram\Traits\RepliableMethod;
+use Tje3d\Telegram\Traits\SilentMethod;
 
-class Video extends Message
+class Video extends MessageMethod
 {
-	use SilentMessage, RepliableMessage, FileMessage;
+	use SilentMethod, RepliableMethod, FileMethod;
 
 	/**
 	 * Api name

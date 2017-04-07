@@ -1,8 +1,8 @@
 <?php
 
-namespace Tje3d\Telegram\Messages;
+namespace Tje3d\Telegram\Methods;
 
-class GetMe extends Message
+class GetMe extends MessageMethod
 {
 	/**
 	 * Api name

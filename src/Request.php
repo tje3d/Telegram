@@ -3,7 +3,7 @@
 namespace Tje3d\Telegram;
 
 use Tje3d\Telegram\Contracts\Bot;
-use Tje3d\Telegram\Contracts\Message;
+use Tje3d\Telegram\Contracts\MessageMethod;
 use Tje3d\Telegram\Contracts\Request as BaseRequest;
 use Tje3d\Telegram\Traits\Configurable;
 
@@ -61,7 +61,7 @@ class Request implements BaseRequest
         return $this->setConfig('body', $value);
     }
 
-    public function sendMessage(Message $message)
+    public function sendMethod(MessageMethod $message)
     {
     	return $this->body($message->toArray())
     		->api($message->api())

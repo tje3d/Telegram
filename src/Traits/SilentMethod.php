@@ -2,7 +2,7 @@
 
 namespace Tje3d\Telegram\Traits;
 
-trait SilentMessage
+trait SilentMethod
 {
 	/**
 	 * Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound.

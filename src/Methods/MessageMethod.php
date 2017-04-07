@@ -2,10 +2,10 @@
 
 namespace Tje3d\Telegram\Messages;
 
-use Tje3d\Telegram\Contracts\Message as BaseMessage;
+use Tje3d\Telegram\Contracts\MessageMethod as BaseMessageMethod;
 use Tje3d\Telegram\Traits\Configurable;
 
-abstract class Message implements BaseMessage
+abstract class MessageMethod implements BaseMessageMethod
 {
 	use Configurable;
 

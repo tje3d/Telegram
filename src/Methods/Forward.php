@@ -1,12 +1,12 @@
 <?php
 
-namespace Tje3d\Telegram\Messages;
+namespace Tje3d\Telegram\Methods;
 
-use Tje3d\Telegram\Traits\SilentMessage;
+use Tje3d\Telegram\Traits\SilentMethod;
 
-class Forward extends Message
+class Forward extends MessageMethod
 {
-	use SilentMessage;
+	use SilentMethod;
 
 	/**
 	 * Api name

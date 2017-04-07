@@ -3,7 +3,7 @@
 namespace Tje3d\Telegram;
 
 use Tje3d\Telegram\Contracts\Bot as BaseBot;
-use Tje3d\Telegram\Contracts\Message;
+use Tje3d\Telegram\Contracts\MessageMethod;
 use Tje3d\Telegram\Request;
 use Tje3d\Telegram\Traits\Configurable;
 
@@ -32,11 +32,6 @@ class Bot implements BaseBot
     	return $this->sendMessage(new Messages\GetMe());
     }
 
-    public function sendMessage(Message $message)
-    {
-    	return $this->request->sendMessage($message);
-    }
-
     public function request()
     {
     	return new Request($this);
@@ -45,5 +40,10 @@ class Bot implements BaseBot
     public function isValid()
     {
     	return isset($this->getMe()->ok);
+    }
+
+    public function sendMethod(MessageMethod $message)
+    {
+    	return $this->request->sendMessage($message);
     }
 }

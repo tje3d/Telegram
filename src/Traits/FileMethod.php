@@ -2,7 +2,7 @@
 
 namespace Tje3d\Telegram\Traits;
 
-trait FileMessage
+trait FileMethod
 {
 	/**
 	 * File Path

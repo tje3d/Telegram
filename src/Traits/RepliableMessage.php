@@ -2,7 +2,7 @@
 
 namespace Tje3d\Telegram\Traits;
 
-trait RepliableMessage
+trait RepliableMethod
 {
 	/**
 	 * If the message is a reply, ID of the original message
