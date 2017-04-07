@@ -6,6 +6,7 @@
 		"email": "tje3d@yahoo.com"
 	}],
 	"require": {
+		"php": ">=5.5",
 		"guzzlehttp/guzzle": "^6.2"
 	},
 	"autoload": {
