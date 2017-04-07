@@ -1,30 +1,22 @@
 <?php
 
 namespace Tje3d\Telegram\Markups;
+
 use Tje3d\Telegram\Buttons\InlineKeyboardButton;
-use \Closure;
+use Tje3d\Telegram\Contracts\KeyboardMarkup;
+use Tje3d\Telegram\Traits\MarkupKeyboard;
 
-class InlineKeyboardMarkup extends Markup
+class InlineKeyboardMarkup extends Markup implements KeyboardMarkup
 {
-	protected $buttons = [];
-	protected $lastRow = 0;
+    use MarkupKeyboard;
 
-	public function row(Closure $closure)
-	{
-		$this->buttons[$this->lastRow] = [];
-		$closure($this);
-		$this->lastRow++;
-	}
+    public function buttonType()
+    {
+        return InlineKeyboardButton::class;
+    }
 
-	public function addButton($config)
-	{
-		$button = new InlineKeyboardButton;
-
-		foreach ($config as $key => $val) {
-			$button->$key($val);
-		}
-
-		$this->buttons[$this->lastRow][] = $button;
-		return $this;
-	}
+    public function to_array()
+    {
+        return ['inline_keyboard' => $this->buttons];
+    }
 }

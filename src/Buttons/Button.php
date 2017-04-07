@@ -2,7 +2,7 @@
 
 namespace Tje3d\Telegram\Buttons;
 
-use Tje3d\Telegram\Contracts\Button;
+use Tje3d\Telegram\Contracts\Button as BaseButton;
 use Tje3d\Telegram\Traits\Configurable;
 
 abstract class Button implements BaseButton
@@ -23,7 +23,7 @@ abstract class Button implements BaseButton
 	 * Convert to array
 	 * @return array
 	 */
-	public function toArray()
+	public function to_array()
 	{
 		$output = [];
 

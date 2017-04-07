@@ -2,6 +2,8 @@
 
 namespace Tje3d\Telegram\Traits;
 
+use Tje3d\Telegram\Contracts\Markup;
+
 trait RepliableMethod
 {
 	/**
@@ -21,6 +23,6 @@ trait RepliableMethod
 	 */
 	public function reply_markup(Markup $markup)
 	{
-		return $this->setConfig('reply_markup', $markup->toJson());
+		return $this->setConfig('reply_markup', (object)$markup->to_array());
 	}
 }
