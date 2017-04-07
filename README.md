@@ -29,6 +29,13 @@ $bot->sendMethod(
 	    ->chat_id($chatId)
 );
 ```
+Or pass configuration as array
+
+```
+$bot->sendMethod(
+    (new Tje3d\Telegram\Methods\Text(['text' => 'hi', 'chat_id' => $chatId]))
+);
+```
 
 ### Keyboard
 ```
