@@ -9,8 +9,18 @@ abstract class Markup implements BaseMarkup
 {
 	use Configurable;
 
-	public function toJson()
+	/**
+	 * Convert to array
+	 * @return array
+	 */
+	public function toArray()
 	{
-		return json_encode([]);
+		$output = [];
+
+		foreach ($this->config as $key => $val) {
+			$output[$key] = $val;
+		}
+
+		return $output;
 	}
 }
