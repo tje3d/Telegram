@@ -1,7 +1,16 @@
 # Telegram Bot API
-PHP Telegram Bot API
+PHP Telegram Bot API, Supports Laravel.
 # Installation
 `composer require tje3d/telegram`
+# Laravel Only
+### Service Provider
+`Tje3d\Telegram\Laravel\TelegramServiceProvider::class`
+### Facade
+`'Bot' => Tje3d\Telegram\Laravel\Facades\Bot::class`
+### Publish Assets
+`artisan vendor:publish --tag=telegram`
+
+Will make a config file named telegram (config/telegram.php)
 # Examples
 ### ✔️ Initialize a Bot
 ```
