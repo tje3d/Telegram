@@ -8,13 +8,6 @@ use Tje3d\Telegram\Bot;
 class TelegramServiceProvider extends ServiceProvider
 {
     /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
-
-    /**
      * Bootstrap any application services.
      *
      * @return void
