@@ -138,5 +138,21 @@ $bot->sendMethod(
 );
 ```
 
+# Exceptions
+Throw's Tje3d\Telegram\Exceptions\TelegramResponseException if sendMethod failed.
+
+```
+try {
+	$bot = new \Tje3d\Telegram\Bot($token);
+	$response = $bot->sendMethod(
+		(new \Tje3d\Telegram\Methods\Text())
+		    ->text($text)
+		    ->chat_id($chatId)
+	);
+} catch (TelegramResponseException $e) {
+	print_r($e->response());
+}
+```
+
 # Contact me
 You can contact me via [Telegram](https://telegram.me/tje3d) or [Email](mailto:tje3d@yahoo.com).

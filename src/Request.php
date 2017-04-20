@@ -2,9 +2,11 @@
 
 namespace Tje3d\Telegram;
 
+use GuzzleHttp\Exception\TransferException;
 use Tje3d\Telegram\Contracts\Bot;
 use Tje3d\Telegram\Contracts\Method;
 use Tje3d\Telegram\Contracts\Request as BaseRequest;
+use Tje3d\Telegram\Exceptions\TelegramResponseException;
 use Tje3d\Telegram\Traits\Configurable;
 
 class Request implements BaseRequest
@@ -119,8 +121,8 @@ class Request implements BaseRequest
             $response = (string) $this->handler->request('POST', $this->apiUrl(), [
                 $bodyType => $body,
             ])->getBody();
-        } catch (ClientException $e) {
-            $response = (string) $e->getResponse()->getBody();
+        } catch (TransferException $e) {
+            throw new TelegramResponseException((string) $e->getResponse()->getBody());
         }
 
         return json_decode($response);
