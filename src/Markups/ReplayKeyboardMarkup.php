@@ -23,7 +23,7 @@ class ReplayKeyboardMarkup extends Markup implements KeyboardMarkup
         return $this->setConfig('resize_keyboard', $value);
     }
 
-    public function toArray()
+    public function to_array()
     {
         return [
             'keyboard'        => $this->buttons,
