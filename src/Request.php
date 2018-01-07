@@ -122,7 +122,7 @@ class Request implements BaseRequest
                 $bodyType => $body,
             ])->getBody();
         } catch (TransferException $e) {
-            throw new TelegramResponseException((string) $e->getResponse()->getBody());
+            throw new TelegramResponseException((string) $e->getBody());
         }
 
         return json_decode($response);
